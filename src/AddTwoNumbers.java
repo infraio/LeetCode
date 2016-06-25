@@ -50,24 +50,3 @@ public class AddTwoNumbers {
   }
 
 }
-
-class ListNode {
-  int val;
-  ListNode next;
-
-  ListNode(int x) {
-    val = x;
-  }
-  
-  @Override
-  public String toString() {
-    String s = String.valueOf(val);
-    ListNode iter = next;
-    while (iter != null) {
-      s += " -> ";
-      s += String.valueOf(iter.val);
-      iter = iter.next;
-    }
-    return s;
-  }
-}
