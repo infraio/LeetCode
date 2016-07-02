@@ -15,15 +15,21 @@ public class NextPermutation {
     if (n <= 1)
         return;
     int i, ii, j;
+    
+    // step 1
     for (ii = n - 1, i = n - 2; i >= 0 && nums[i] >= nums[ii]; ii--, i--)
         ;
     if (i == -1) { 
         reverseArray(nums);
         return;
     }
+    
+    // step 2
     for (j = n - 1; j > i && nums[i] >= nums[j]; j--)
         ;
     swap(nums, i, j);
+    
+    // step 3
     for (i = ii, j = n - 1; i < j; i++, j--) {
         swap(nums, i, j);
     }
