@@ -1,5 +1,5 @@
 
-public class SearcForRange {
+public class SearchForRange {
 
   public static void main(String[] args) {
     int[] nums = new int[] {5, 7, 7, 8, 8, 10};
