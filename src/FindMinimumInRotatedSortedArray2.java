@@ -1,8 +1,8 @@
 
-public class FindMinimumInRotatedSortedArray {
+public class FindMinimumInRotatedSortedArray2 {
 
   public static void main(String[] args) {
-    int[] nums = new int[] { 4, 5, 6, 7, 1, 2, 3 };
+    int[] nums = new int[] {1, 1, 1, 1, 1, 1, 0};
     System.out.println(findMin(nums));
   }
 
@@ -13,17 +13,18 @@ public class FindMinimumInRotatedSortedArray {
 
     int left = 0;
     int right = nums.length - 1;
-
-    while (nums[left] > nums[right]) {
+    
+    while (left < right && nums[left] >= nums[right]) {
       int mid = (left + right) / 2;
-      if (nums[mid] > nums[right]) {
-        left = mid + 1;
-      } else {
+      if (nums[mid] > nums[left]) {
+        left = mid;
+      } else if (nums[mid] < nums[left]) {
         right = mid;
+      } else {
+        left += 1;
       }
     }
-
+    
     return nums[left];
   }
-
 }
